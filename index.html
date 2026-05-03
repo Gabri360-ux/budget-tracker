@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Presupuesto Personal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== SECCIÓN HEADER ===== -->
+    <header class="header">
+        <h1 class="header__title">BUDGET TRACKER</h1>
+    </header>
+
+    <!-- ===== SECCIÓN MAIN ===== -->
+    <main class="main">
+        <!-- SECCIÓN IZQUIERDA -->
+        <section class="main__region main__region--left">
+            <h2 class="main__subtitulo">FORMULARIO DE GASTOS</h2>
+            <form class="transaction-form" id="transactionForm">
+                <div class="transaction-form__field">
+                    <label class="transaction-form__label" for="nombre">Descripción de transacción</label>
+                    <input class="transaction-form__input transaction-form__input--text" type="text" id="nombre" placeholder="Ej: Supermercado" required>
+                </div>
+                <div class="transaction-form__field">
+                    <label class="transaction-form__label" for="monto">Monto</label>
+                    <input class="transaction-form__input transaction-form__input--number" type="number" id="monto" min="0.1" step="0.1" placeholder="0.00" required>
+                </div>
+                <div class="transaction-form__field">
+                    <select class="transaction-form__select" id="tipo">
+                        <option value="gasto">Gasto</option>
+                        <option value="ingreso">Ingreso</option>
+                    </select>
+                </div>
+                <button class="transaction-form__btn" type="button" id="addTransactionBtn">Añadir transacción</button>
+            </form>
+        </section>
+
+        <!-- SECCIÓN CENTRAL -->
+        <section class="main__region main__region--central">
+            <h2 class="main__subtitulo">RESULTADOS EN TIEMPO REAL</h2>
+            <div class="stats-panel">
+                <article class="stats-panel__article">
+                    <span class="stats-panel__label">Ingresos totales:</span>
+                    <span class="stats-panel__value stats-panel__value--ingreso">S/ 0.00</span>
+                </article>
+                <article class="stats-panel__article">
+                    <span class="stats-panel__label">Gastos totales:</span>
+                    <span class="stats-panel__value stats-panel__value--gasto">S/ 0.00</span>
+                </article>
+                <article class="stats-panel__article stats-panel__article--balance">
+                    <span class="stats-panel__label">Balance:</span>
+                    <span class="stats-panel__value stats-panel__value--balance">S/ 0.00</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DERECHA -->
+        <aside class="main__region main__region--right">
+            <h2 class="main__subtitulo">HISTORIAL DE TRANSACCIONES</h2>
+            <div id="historial-list" class="history">
+                <!-- Aquí JS inyectará artículos -->
+            </div>
+        </aside>
+    </main>
+
+    <!-- ===== SECCIÓN FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer__container footer__container--left">
+            <h3 class="footer__subtitulo">BUDGET TRACKER</h3>
+        </div>
+        <div class="footer__container footer__container--central">
+            <h3 class="footer__subtitulo">SOBRE NOSOTROS</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aliquid a soluta, praesentium adipisci temporibus enim nesciunt maxime laborum? Deserunt impedit magni, repudiandae unde debitis officiis facilis voluptates rerum aliquid.</p>
+        </div>
+        <div class="footer__container footer__container--right">
+            <h3 class="footer__subtitulo">SÍGUENOS</h3>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
